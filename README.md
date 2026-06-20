@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Swatch ✨
 
-## Getting Started
+A premium, unified design utility built for frontend developers. Swatch instantly generates production-ready CSS and Tailwind code for complex styling needs: brand palettes, AI-generated color themes, radial/linear gradients, and multi-layered box shadows.
 
-First, run the development server:
+## Why I Built Swatch
 
+I have personally used scattered online tools for generating palettes, CSS gradients, and box-shadows for years. While they exist, they are often cluttered with ads, require paid subscriptions for premium features, or just have a clunky, dated UX.
+
+I wanted a single, unified premium tool that feels like a native desktop app—ad-free, lightning fast, and instantly outputs exact code snippets so I can get back to building. Swatch solves this personal pain point, making UI design workflows simpler, faster, and completely free.
+
+## Features
+
+- **AI Theme Generator:** Describe a brand or vibe, and get a completely tailored 5-color semantic palette instantly.
+- **Palette Generator:** Start from a single hex code and automatically generate harmonious 5-color palettes.
+- **Gradient Generator:** Visually build linear or radial CSS gradients, complete with custom angle, shape, and position controls.
+- **Shadow Generator:** Visually tune multi-layer drop shadows and easily grab the exact box-shadow values.
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS + custom CSS Variables
+- **Components:** shadcn/ui + Lucide React
+- **Deployment:** Vercel
+
+## Running Locally
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/swatch.git
+```
+2. Install dependencies:
+```bash
+npm install
+```
+3. Run the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Built for the Digital Heroes Custom Software Developer Trial.*
