@@ -4,7 +4,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
-
+import GradientGenerator from "@/components/tools/GradientGenerator";
 import PaletteGenerator from "@/components/tools/PaletteGenerator";
 
 export default function Home() {
@@ -45,7 +45,7 @@ export default function Home() {
         </TabsContent>
 
         <TabsContent value="gradient">
-          Coming next
+          <GradientGenerator />
         </TabsContent>
 
         <TabsContent value="palette">
