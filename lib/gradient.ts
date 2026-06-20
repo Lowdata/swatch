@@ -5,7 +5,10 @@ export type GradientStop = {
 
 export function buildGradient(
   angle: number,
-  stops: GradientStop[]
+  stops: GradientStop[],
+  type: "linear" | "radial" = "linear",
+  radialPosition: string = "center",
+  radialShape: "circle" | "ellipse" = "circle"
 ) {
   const stopString = stops
     .sort((a, b) => a.position - b.position)
@@ -15,5 +18,8 @@ export function buildGradient(
     )
     .join(", ");
 
+  if (type === "radial") {
+    return `radial-gradient(${radialShape} at ${radialPosition}, ${stopString})`;
+  }
   return `linear-gradient(${angle}deg, ${stopString})`;
 }
