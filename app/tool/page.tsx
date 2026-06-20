@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   Tabs,
   TabsContent,
@@ -17,8 +18,10 @@ export default function Home() {
         {/* Left Rail */}
         <aside className="w-full md:w-[300px] flex-shrink-0 border-r border-border bg-card p-6 flex flex-col sticky top-0 h-screen overflow-y-auto">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold tracking-tight text-foreground">Swatch</h1>
-            <p className="text-sm text-muted-foreground mt-1">Premium Design Utility</p>
+            <Link href="/" className="inline-block group">
+              <h1 className="text-3xl font-bold tracking-tight text-foreground group-hover:text-accent transition-colors">Swatch</h1>
+              <p className="text-sm text-muted-foreground mt-1 group-hover:text-foreground transition-colors">Premium Design Utility</p>
+            </Link>
           </div>
 
           <TabsList className="flex flex-col h-auto bg-transparent p-0 space-y-2 items-stretch w-full mb-8">
