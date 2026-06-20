@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/tabs";
 import GradientGenerator from "@/components/tools/GradientGenerator";
 import PaletteGenerator from "@/components/tools/PaletteGenerator";
-
+import ShadowGenerator from "@/components/tools/ShadowGenerator";
 export default function Home() {
   return (
     <main className="min-h-screen max-w-7xl mx-auto p-8">
@@ -41,7 +41,7 @@ export default function Home() {
         </TabsList>
 
         <TabsContent value="shadow">
-          Coming next
+          <ShadowGenerator />
         </TabsContent>
 
         <TabsContent value="gradient">
