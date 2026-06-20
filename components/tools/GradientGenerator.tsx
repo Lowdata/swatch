@@ -50,8 +50,8 @@ export default function GradientGenerator() {
     <div className="flex flex-col gap-6 max-w-6xl mx-auto h-full">
       <div className="mb-2">
         <h2 className="text-3xl font-bold mb-1">Gradient</h2>
-        <p className="text-muted-foreground text-lg mb-2">Blend colors into linear or radial gradients.</p>
-        <p className="text-sm font-medium text-accent">Pick two colors and an angle, or start from a preset.</p>
+        <p className="text-foreground/90 text-lg mb-2">Blend colors into linear or radial gradients.</p>
+        <p className="text-sm font-medium text-white">Pick two colors and an angle, or start from a preset.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start relative flex-1">
