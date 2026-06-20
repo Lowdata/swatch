@@ -37,8 +37,8 @@ export default function PaletteGenerator() {
     <div className="flex flex-col gap-6 max-w-6xl mx-auto h-full">
       <div className="mb-2">
         <h2 className="text-3xl font-bold mb-1">Palette</h2>
-        <p className="text-muted-foreground text-lg mb-2">Generate a 5-color harmony from one base hex.</p>
-        <p className="text-sm font-medium text-accent">Pick a base color or hit shuffle — the rest generates automatically.</p>
+        <p className="text-foreground/90 text-lg mb-2">Generate a 5-color harmony from one base hex.</p>
+        <p className="text-sm font-medium text-white">Pick a base color or hit shuffle — the rest generates automatically.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start relative flex-1">

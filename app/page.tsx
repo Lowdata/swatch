@@ -18,13 +18,23 @@ export default function LandingPage() {
           <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed">
             A premium design utility for front-end developers: tune shadows, gradients, palettes, and full brand themes, then copy the exact code.
           </p>
-          <Link 
-            href="/tool" 
-            className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold text-lg hover:brightness-110 hover:scale-105 transition-all shadow-sm"
-          >
-            Open Swatch
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link 
+              href="/tool" 
+              className="group inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold text-lg hover:brightness-110 hover:scale-105 transition-all shadow-sm w-full sm:w-auto"
+            >
+              Open Swatch
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <a
+              href="https://digitalheroesco.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-xl bg-surface-2 border border-border text-foreground px-8 py-4 font-bold text-lg hover:border-accent hover:text-accent transition-all hover:scale-105 shadow-sm w-full sm:w-auto"
+            >
+              Built for Digital Heroes
+            </a>
+          </div>
         </section>
 
         {/* Features Grid */}
@@ -62,6 +72,19 @@ export default function LandingPage() {
             <p className="text-muted-foreground">Layer and tune box-shadow values.</p>
           </div>
 
+        </section>
+
+        {/* Why this App */}
+        <section className="mt-32 max-w-3xl mx-auto text-center animate-in fade-in slide-in-from-bottom-16 duration-1000">
+          <h2 className="text-3xl font-bold mb-6 text-foreground">Why I Built Swatch</h2>
+          <div className="p-8 rounded-2xl bg-surface-1 border border-border text-left">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              I have personally used scattered online tools for generating palettes, CSS gradients, and box-shadows for years. While they exist, they are often cluttered with ads, require paid subscriptions for premium features, or just have a clunky, dated UX.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              I wanted a single, unified premium tool that feels like a native desktop app—ad-free, lightning fast, and instantly outputs exact code snippets so I can get back to building. Swatch solves this personal pain point, making UI design workflows simpler, faster, and completely free.
+            </p>
+          </div>
         </section>
       </main>
 

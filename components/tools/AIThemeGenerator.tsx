@@ -88,8 +88,8 @@ export default function AIThemeGenerator() {
     <div className="flex flex-col gap-6 max-w-6xl mx-auto h-full">
       <div className="mb-2">
         <h2 className="text-3xl font-bold mb-1">AI Theme ✨</h2>
-        <p className="text-muted-foreground text-lg mb-2">Describe a brand, get a full color system.</p>
-        <p className="text-sm font-medium text-accent">Select a quick idea below or type your own description to start.</p>
+        <p className="text-foreground/90 text-lg mb-2">Describe a brand, get a full color system.</p>
+        <p className="text-sm font-medium text-white">Select a quick idea below or type your own description to start.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start relative flex-1">
@@ -102,7 +102,7 @@ export default function AIThemeGenerator() {
             className="w-full h-32 p-4 rounded-xl border border-border bg-input resize-none focus:ring-2 focus:ring-ring outline-none transition-all"
           />
           <div className="flex justify-between items-center mt-2">
-            <span className="text-xs text-neutral-400 font-medium">
+            <span className="text-xs text-muted-foreground font-medium">
               {prompt.trim().split(/\s+/).filter(Boolean).length}/100 words
             </span>
           </div>
@@ -117,7 +117,7 @@ export default function AIThemeGenerator() {
         </button>
 
         <div className="pt-2">
-          <label className="block text-sm font-medium mb-3 text-neutral-500">Quick Ideas</label>
+          <label className="block text-sm font-medium mb-3 text-muted-foreground">Quick Ideas</label>
           <div className="flex flex-wrap gap-2">
             {["Coffee shop", "Fintech SaaS", "Fashion brand", "Crypto Wallet"].map((idea) => (
               <button
@@ -132,7 +132,7 @@ export default function AIThemeGenerator() {
         </div>
 
         {theme && (
-          <div className="pt-6 border-t border-neutral-100 dark:border-neutral-800">
+          <div className="pt-6 border-t border-border">
             <label className="block text-sm font-medium mb-3">Generated Colors</label>
             <div className="grid grid-cols-5 gap-2">
               {[
@@ -197,7 +197,7 @@ export default function AIThemeGenerator() {
                 <button
                   key={c.name}
                   onClick={() => copyHex(c.hex)}
-                  className="group flex flex-col items-center gap-1.5 p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
+                  className="group flex flex-col items-center gap-1.5 p-2 rounded-lg hover:bg-surface-2 transition-colors"
                   title={`Copy ${c.name} HEX`}
                 >
                   <div className="w-8 h-8 rounded-full border border-border shadow-sm" style={{ background: c.hex }} />

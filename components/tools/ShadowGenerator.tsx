@@ -148,7 +148,7 @@ export default function ShadowGenerator() {
         <div className="flex flex-col min-h-full">
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 flex flex-col h-full relative pb-4">
             <ChipPreview 
-              innerClassName="bg-white dark:bg-neutral-800"
+              innerClassName="bg-card"
               style={{ boxShadow: shadowValue }} 
             />
             

@@ -27,11 +27,11 @@ export function TicketOutput({ css, tailwind }: TicketOutputProps) {
   };
 
   return (
-    <div className="relative mt-12 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-lg shadow-sm">
+    <div className="relative mt-12 bg-card border border-border rounded-lg shadow-sm">
       {/* Perforated top edge */}
       <div className="absolute top-0 left-0 w-full h-3 -mt-[6px] overflow-hidden flex justify-around px-2">
         {Array.from({ length: 30 }).map((_, i) => (
-          <div key={i} className="w-3 h-3 rounded-full bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800" />
+          <div key={i} className="w-3 h-3 rounded-full bg-surface-2 border border-border" />
         ))}
       </div>
 
@@ -40,16 +40,16 @@ export function TicketOutput({ css, tailwind }: TicketOutputProps) {
         {css && (
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-bold text-neutral-400 uppercase tracking-wider">CSS</span>
+              <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">CSS</span>
               <button
                 onClick={() => copy(css, "css")}
-                className="text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors"
                 title="Copy CSS"
               >
                 {copiedCss ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
               </button>
             </div>
-            <pre className="block p-4 bg-neutral-50 dark:bg-neutral-900 rounded-md border border-neutral-100 dark:border-neutral-800 text-sm font-mono text-neutral-800 dark:text-neutral-300 overflow-x-auto whitespace-pre-wrap">
+            <pre className="block p-4 bg-surface-2 rounded-md border border-border text-sm font-mono text-foreground overflow-x-auto whitespace-pre-wrap">
               {css}
             </pre>
           </div>
@@ -59,16 +59,16 @@ export function TicketOutput({ css, tailwind }: TicketOutputProps) {
         {tailwind && (
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-bold text-neutral-400 uppercase tracking-wider">Tailwind</span>
+              <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Tailwind</span>
               <button
                 onClick={() => copy(tailwind, "tw")}
-                className="text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors"
                 title="Copy Tailwind"
               >
                 {copiedTw ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
               </button>
             </div>
-            <pre className="block p-4 bg-neutral-50 dark:bg-neutral-900 rounded-md border border-neutral-100 dark:border-neutral-800 text-sm font-mono text-neutral-800 dark:text-neutral-300 overflow-x-auto whitespace-pre-wrap">
+            <pre className="block p-4 bg-surface-2 rounded-md border border-border text-sm font-mono text-foreground overflow-x-auto whitespace-pre-wrap">
               {tailwind}
             </pre>
           </div>
