@@ -1,79 +1,89 @@
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs";
-import GradientGenerator from "@/components/tools/GradientGenerator";
-import PaletteGenerator from "@/components/tools/PaletteGenerator";
-import ShadowGenerator from "@/components/tools/ShadowGenerator";
-import AIThemeGenerator from "@/components/tools/AIThemeGenerator";
+import Link from "next/link";
+import { ArrowRight, Sparkles, Layers, Palette, Blend } from "lucide-react";
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <main className="min-h-screen bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 flex flex-col md:flex-row">
-      <Tabs defaultValue="shadow" orientation="vertical" className="flex flex-col md:flex-row w-full flex-1">
+    <div className="min-h-screen bg-background text-foreground flex flex-col font-sans">
+      <main className="flex-1 flex flex-col max-w-6xl mx-auto w-full px-6 py-20 md:py-32">
         
-        {/* Left Rail */}
-        <aside className="w-full md:w-[300px] flex-shrink-0 border-r border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black p-6 flex flex-col min-h-screen">
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold tracking-tight">Swatch</h1>
-            <p className="text-sm text-neutral-500 mt-1">Premium Design Utility</p>
+        {/* Hero Section */}
+        <section className="flex flex-col items-center text-center max-w-3xl mx-auto mb-24 animate-in fade-in slide-in-from-bottom-8 duration-700">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-2 border border-border text-xs font-medium text-muted-foreground mb-8">
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            v3.0 Live
           </div>
-
-          <TabsList className="flex flex-col h-auto bg-transparent p-0 space-y-1 items-stretch w-full mb-8">
-            <TabsTrigger value="shadow" className="justify-start px-4 py-2.5 data-[state=active]:bg-neutral-100 dark:data-[state=active]:bg-neutral-800 rounded-lg">
-              Shadow
-            </TabsTrigger>
-            <TabsTrigger value="gradient" className="justify-start px-4 py-2.5 data-[state=active]:bg-neutral-100 dark:data-[state=active]:bg-neutral-800 rounded-lg">
-              Gradient
-            </TabsTrigger>
-            <TabsTrigger value="palette" className="justify-start px-4 py-2.5 data-[state=active]:bg-neutral-100 dark:data-[state=active]:bg-neutral-800 rounded-lg">
-              Palette
-            </TabsTrigger>
-            <TabsTrigger value="ai-theme" className="justify-start px-4 py-2.5 data-[state=active]:bg-neutral-100 dark:data-[state=active]:bg-neutral-800 rounded-lg">
-              AI Theme ✨
-            </TabsTrigger>
-          </TabsList>
-
-          <div className="mt-auto pt-8 border-t border-neutral-200 dark:border-neutral-800">
-            <footer className="flex flex-col gap-4 text-sm">
-              <a
-                href="https://digitalheroesco.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-fit rounded-md bg-black dark:bg-white text-white dark:text-black px-4 py-2 font-medium transition-transform hover:scale-105 active:scale-95"
-              >
-                Built for Digital Heroes
-              </a>
-              <div className="text-neutral-500">
-                Ayush Pahuja
-                <br />
-                <a href="mailto:ayush.pahuja090@gmail.com" className="hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors">
-                  ayush.pahuja090@gmail.com
-                </a>
-              </div>
-            </footer>
-          </div>
-        </aside>
-
-        {/* Flexible Preview Stage */}
-        <section className="flex-1 bg-neutral-50 dark:bg-neutral-900 p-6 md:p-12 overflow-y-auto">
-          <TabsContent value="shadow" className="mt-0 h-full">
-            <ShadowGenerator />
-          </TabsContent>
-          <TabsContent value="gradient" className="mt-0 h-full">
-            <GradientGenerator />
-          </TabsContent>
-          <TabsContent value="palette" className="mt-0 h-full">
-            <PaletteGenerator />
-          </TabsContent>
-          <TabsContent value="ai-theme" className="mt-0 h-full">
-            <AIThemeGenerator />
-          </TabsContent>
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-foreground">
+            Swatch
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed">
+            A premium design utility for front-end developers: tune shadows, gradients, palettes, and full brand themes, then copy the exact code.
+          </p>
+          <Link 
+            href="/tool" 
+            className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold text-lg hover:brightness-110 hover:scale-105 transition-all shadow-sm"
+          >
+            Open Swatch
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </section>
 
-      </Tabs>
-    </main>
+        {/* Features Grid */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-bottom-12 duration-1000">
+          
+          <div className="flex flex-col p-8 rounded-2xl bg-surface-1 border border-border group hover:bg-surface-2 transition-colors relative overflow-hidden">
+            <div className="w-12 h-12 rounded-xl bg-surface-2 flex items-center justify-center mb-6 shadow-sm border border-border group-hover:border-accent/50 transition-colors">
+              <Sparkles className="w-6 h-6 text-accent" />
+            </div>
+            <h3 className="text-xl font-semibold mb-2 text-foreground">AI Theme ✨</h3>
+            <p className="text-muted-foreground">Describe a brand, get a full color system.</p>
+          </div>
+
+          <div className="flex flex-col p-8 rounded-2xl bg-surface-1 border border-border group hover:bg-surface-2 transition-colors relative overflow-hidden">
+            <div className="w-12 h-12 rounded-xl bg-surface-2 flex items-center justify-center mb-6 shadow-sm border border-border group-hover:border-accent/50 transition-colors">
+              <Palette className="w-6 h-6 text-accent" />
+            </div>
+            <h3 className="text-xl font-semibold mb-2 text-foreground">Palette</h3>
+            <p className="text-muted-foreground">Generate a 5-color harmony from one base hex.</p>
+          </div>
+
+          <div className="flex flex-col p-8 rounded-2xl bg-surface-1 border border-border group hover:bg-surface-2 transition-colors relative overflow-hidden">
+            <div className="w-12 h-12 rounded-xl bg-surface-2 flex items-center justify-center mb-6 shadow-sm border border-border group-hover:border-accent/50 transition-colors">
+              <Blend className="w-6 h-6 text-accent" />
+            </div>
+            <h3 className="text-xl font-semibold mb-2 text-foreground">Gradient</h3>
+            <p className="text-muted-foreground">Blend colors into linear or radial gradients.</p>
+          </div>
+
+          <div className="flex flex-col p-8 rounded-2xl bg-surface-1 border border-border group hover:bg-surface-2 transition-colors relative overflow-hidden">
+            <div className="w-12 h-12 rounded-xl bg-surface-2 flex items-center justify-center mb-6 shadow-[0_8px_30px_rgba(217,164,65,0.1)] border border-border group-hover:border-accent/50 transition-colors">
+              <Layers className="w-6 h-6 text-accent" />
+            </div>
+            <h3 className="text-xl font-semibold mb-2 text-foreground">Shadow</h3>
+            <p className="text-muted-foreground">Layer and tune box-shadow values.</p>
+          </div>
+
+        </section>
+      </main>
+
+      <footer className="w-full border-t border-border bg-surface-1 mt-auto">
+        <div className="max-w-6xl mx-auto w-full px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <a
+            href="https://digitalheroesco.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex rounded-md bg-accent text-accent-foreground px-4 py-2 font-medium text-sm transition-all hover:brightness-110 active:scale-95 shadow-sm"
+          >
+            Built for Digital Heroes
+          </a>
+          <div className="text-sm text-muted-foreground text-center sm:text-right">
+            Ayush Pahuja <br className="sm:hidden" />
+            <span className="hidden sm:inline"> • </span>
+            <a href="mailto:ayush.pahuja090@gmail.com" className="hover:text-foreground transition-colors">
+              ayush.pahuja090@gmail.com
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }

@@ -20,7 +20,7 @@ export function ChipPreview({
       )}
     >
       {/* Punch hole */}
-      <div className="absolute top-6 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-neutral-50 dark:bg-neutral-900 shadow-inner z-10 border border-neutral-200 dark:border-neutral-800" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-neutral-50 dark:bg-neutral-900 shadow-inner z-10 border border-neutral-200 dark:border-neutral-800" />
       
       {/* The actual colored/styled area */}
       <div 

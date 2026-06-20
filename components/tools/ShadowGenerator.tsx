@@ -44,113 +44,119 @@ export default function ShadowGenerator() {
         setX(20); setY(20); setBlur(60); setSpread(0); setOpacity(0.1); setColor("#000000"); // Simplified single shadow for demo
         break;
       case "Layered":
-        setX(0); setY(14); setBlur(28); setSpread(0); setOpacity(0.25); setColor("#000000");
+      case "Neumorphic":
+        setX(20); setY(20); setBlur(60); setSpread(0); setOpacity(0.1); setColor("#000000");
         break;
     }
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start max-w-6xl mx-auto">
-      {/* Controls */}
-      <div className="space-y-8">
-        <div>
-          <h2 className="text-xl font-bold mb-4">Presets</h2>
-          <div className="flex flex-wrap gap-2">
-            {["Soft", "Hard", "Glass", "Neumorphism", "Layered"].map((p) => (
-              <PresetChip key={p} label={p} onClick={() => applyPreset(p)} />
-            ))}
-          </div>
-        </div>
-
-        <div className="space-y-6">
-          <h2 className="text-xl font-bold mb-4">Adjustments</h2>
-          
-          <div>
-            <label className="flex justify-between text-sm font-medium mb-2">
-              <span>Offset X</span>
-              <span className="text-neutral-500">{x}px</span>
-            </label>
-            <input
-              type="range"
-              min="-60" max="60"
-              value={x}
-              onChange={(e) => setX(Number(e.target.value))}
-              className="w-full accent-black dark:accent-white"
-            />
-          </div>
-
-          <div>
-            <label className="flex justify-between text-sm font-medium mb-2">
-              <span>Offset Y</span>
-              <span className="text-neutral-500">{y}px</span>
-            </label>
-            <input
-              type="range"
-              min="-60" max="60"
-              value={y}
-              onChange={(e) => setY(Number(e.target.value))}
-              className="w-full accent-black dark:accent-white"
-            />
-          </div>
-
-          <div>
-            <label className="flex justify-between text-sm font-medium mb-2">
-              <span>Blur</span>
-              <span className="text-neutral-500">{blur}px</span>
-            </label>
-            <input
-              type="range"
-              min="0" max="120"
-              value={blur}
-              onChange={(e) => setBlur(Number(e.target.value))}
-              className="w-full accent-black dark:accent-white"
-            />
-          </div>
-
-          <div>
-            <label className="flex justify-between text-sm font-medium mb-2">
-              <span>Spread</span>
-              <span className="text-neutral-500">{spread}px</span>
-            </label>
-            <input
-              type="range"
-              min="-50" max="50"
-              value={spread}
-              onChange={(e) => setSpread(Number(e.target.value))}
-              className="w-full accent-black dark:accent-white"
-            />
-          </div>
-
-          <div>
-            <label className="flex justify-between text-sm font-medium mb-2">
-              <span>Opacity</span>
-              <span className="text-neutral-500">{Math.round(opacity * 100)}%</span>
-            </label>
-            <input
-              type="range"
-              min="0" max="1" step="0.01"
-              value={opacity}
-              onChange={(e) => setOpacity(Number(e.target.value))}
-              className="w-full accent-black dark:accent-white"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium mb-2">Shadow Color</label>
-            <input
-              type="color"
-              value={color}
-              onChange={(e) => setColor(e.target.value)}
-              className="w-full h-10 rounded-md cursor-pointer"
-            />
-          </div>
-        </div>
+    <div className="flex flex-col gap-6 max-w-6xl mx-auto h-full">
+      <div className="mb-2">
+        <h2 className="text-3xl font-bold mb-1">Shadow</h2>
+        <p className="text-muted-foreground text-lg mb-2">Layer and tune box-shadow values.</p>
+        <p className="text-sm font-medium text-accent">Start from a preset below, then drag any slider to adjust it.</p>
       </div>
 
-      {/* Preview & Output */}
-      <div className="sticky top-12">
-        <ChipPreview style={{ boxShadow: shadowValue }} />
-        <TicketOutput css={cssOutput} tailwind={tailwindOutput} />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start relative flex-1">
+        {/* Controls */}
+        <div className="space-y-8">
+          <div>
+            <label className="block text-sm font-medium mb-3 text-muted-foreground">Start here</label>
+            <h2 className="text-xl font-bold mb-4">Presets</h2>
+            <div className="flex flex-wrap gap-2">
+              {["Soft", "Hard", "Float", "Glass", "Neumorphic"].map((p) => (
+                <PresetChip key={p} label={p} onClick={() => applyPreset(p)} />
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <h2 className="text-xl font-bold mb-4">Adjustments</h2>
+            
+            <div>
+              <label className="flex justify-between text-sm font-medium mb-2">
+                <span>Offset X</span>
+                <span className="text-muted-foreground">{x}px</span>
+              </label>
+              <input
+                type="range"
+                min="-60" max="60"
+                value={x}
+                onChange={(e) => setX(Number(e.target.value))}
+                className="w-full accent-primary"
+              />
+            </div>
+
+            <div>
+              <label className="flex justify-between text-sm font-medium mb-2">
+                <span>Offset Y</span>
+                <span className="text-muted-foreground">{y}px</span>
+              </label>
+              <input
+                type="range"
+                min="-60" max="60"
+                value={y}
+                onChange={(e) => setY(Number(e.target.value))}
+                className="w-full accent-primary"
+              />
+            </div>
+
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <label className="text-sm font-medium">Blur <span className="text-xs font-normal text-muted-foreground ml-1">(softness of the shadow)</span></label>
+                <span className="text-sm text-muted-foreground">{blur}px</span>
+              </div>
+              <input type="range" min="0" max="100" value={blur} onChange={(e) => setBlur(Number(e.target.value))} className="w-full accent-primary" />
+            </div>
+
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <label className="text-sm font-medium">Spread <span className="text-xs font-normal text-muted-foreground ml-1">(grows or shrinks the edge)</span></label>
+                <span className="text-sm text-muted-foreground">{spread}px</span>
+              </div>
+              <input type="range" min="-50" max="50" value={spread} onChange={(e) => setSpread(Number(e.target.value))} className="w-full accent-primary" />
+            </div>
+
+            <div>
+              <label className="flex justify-between text-sm font-medium mb-2">
+                <span>Opacity</span>
+                <span className="text-muted-foreground">{Math.round(opacity * 100)}%</span>
+              </label>
+              <input
+                type="range"
+                min="0" max="1" step="0.01"
+                value={opacity}
+                onChange={(e) => setOpacity(Number(e.target.value))}
+                className="w-full accent-primary"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">Shadow Color</label>
+              <input
+                type="color"
+                value={color}
+                onChange={(e) => setColor(e.target.value)}
+                className="w-full h-10 rounded-md cursor-pointer"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Preview & Output */}
+        <div className="flex flex-col min-h-full">
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 flex flex-col h-full relative pb-4">
+            <ChipPreview 
+              innerClassName="bg-white dark:bg-neutral-800"
+              style={{ boxShadow: shadowValue }} 
+            />
+            
+            <div className="sticky bottom-4 z-10 mt-8">
+              <TicketOutput css={cssOutput} tailwind={tailwindOutput} />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
